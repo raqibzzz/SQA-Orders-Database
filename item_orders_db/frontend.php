@@ -59,7 +59,7 @@ tr {
 
 .controls {
     display: flex;
-    gap: 1rem;
+    gap: 0.5rem;
     flex-wrap: wrap;
     align-items: center;
     margin-bottom: 1.5rem;
@@ -69,6 +69,7 @@ tr {
     flex: 1;
     min-width: 250px;
     position: relative;
+    margin-right: 0;
 }
 
 .search-box input {
@@ -427,7 +428,7 @@ tr:hover td {
 }
 
 .tag-filter {
-    margin-left: 1rem;
+    margin-left: 0;
 }
 
 select#tagFilter {
@@ -524,6 +525,31 @@ html {
     overflow-y: scroll; /* Always show vertical scrollbar */
     scrollbar-gutter: stable; /* Reserves space for scrollbar */
 }
+
+.status-filter {
+    margin-left: 1rem;
+}
+
+select#statusFilter {
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.375rem;
+    font-size: 15px;
+    background-color: white;
+    color: var(--text-primary);
+    cursor: pointer;
+    font-weight: 500;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1em;
+    min-width: 120px;
+}
+
+select#statusFilter:hover {
+    background-color: var(--background-color);
+}
     </style>
 </head>
 <body>
@@ -533,17 +559,17 @@ html {
             <div class="controls">
                 <div class="search-box">
                     <i class="fas fa-search"></i>
-                    <input type="text" id="filterInput" placeholder="Search by REQ Number...">
+                    <input type="text" id="filterInput" placeholder="Search by Type, Model, Tags, or REQ Number...">
                 </div>
+                <button class="button button-primary" onclick="filterTable()">
+                    <i class="fas fa-search"></i>
+                    Search
+                </button>
                 <div class="tag-filter">
                     <select id="tagFilter" onchange="filterByTag(this.value)">
                         <option value="">All Tags</option>
                     </select>
                 </div>
-                <button class="button button-secondary" onclick="filterTable()">
-                    <i class="fas fa-filter"></i>
-                    Filter
-                </button>
                 <button class="button button-secondary" onclick="showAll()">
                     <i class="fas fa-list"></i>
                     Show All
@@ -551,10 +577,6 @@ html {
                 <button class="button button-primary" onclick="showModal()">
                     <i class="fas fa-plus"></i>
                     Add New Record
-                </button>
-                <button class="button button-primary" onclick="window.location.href='closed_records.php'">
-                    <i class="fas fa-archive"></i>
-                    View Closed Records
                 </button>
             </div>
         </div>
@@ -570,8 +592,18 @@ html {
             <table id="itemOrdersTable">
             <thead>
         <tr>
-            <th>Type</th>
-            <th>Model Name</th>
+            <th>
+                Type
+                <button class="sort-btn" onclick="toggleTypeSort()">
+                    <i id="typeSortIcon" class="fas fa-sort"></i>
+                </button>
+            </th>
+            <th>
+                Model Name
+                <button class="sort-btn" onclick="toggleModelSort()">
+                    <i id="modelSortIcon" class="fas fa-sort"></i>
+                </button>
+            </th>
             <th>Quantity</th>
             <th>Description</th>
             <th>REQ/PO Number</th>
@@ -581,8 +613,18 @@ html {
                     <i id="dateSortIcon" class="fas fa-sort"></i>
                 </button>
             </th>
-            <th>Order Status</th>
-            <th>Tags</th>
+            <th>
+                Order Status
+                <button class="sort-btn" onclick="toggleStatusSort()">
+                    <i id="statusSortIcon" class="fas fa-sort"></i>
+                </button>
+            </th>
+            <th>
+                Tags
+                <button class="sort-btn" onclick="toggleTagSort()">
+                    <i id="tagSortIcon" class="fas fa-sort"></i>
+                </button>
+            </th>
             <th>Notes</th>
             <th>Actions</th>
         </tr>
@@ -712,13 +754,15 @@ html {
         
         
         function openDescriptionModal(id, description) {
-    currentRowId = id;
-    document.getElementById('descriptionText').value = description || '';
-    const modal = document.getElementById('descriptionModal');
-    modal.style.display = "block";
-    modal.classList.add('active');
-    document.getElementById('descriptionText').focus();
-}
+            currentRowId = id;
+            // Decode any escaped characters
+            const decodedDescription = description
+                .replace(/\\n/g, '\n')
+                .replace(/\\"/g, '"')
+                .replace(/\\\\/g, '\\');
+            document.getElementById('descriptionText').value = decodedDescription;
+            document.getElementById('descriptionModal').style.display = "block";
+        }
 
         function closeDescriptionModal() {
             document.getElementById('descriptionModal').style.display = "none";
@@ -727,20 +771,16 @@ html {
 
         function openNotesModal(id, notes) {
     currentRowId = id;
-    document.getElementById('notesText').value = notes || '';
-    const modal = document.getElementById('notesModal');
-    modal.style.display = "flex";
-    modal.classList.add('active');
-    document.getElementById('notesText').focus();
+    document.getElementById('notesText').value = notes;
+    document.getElementById('notesModal').style.display = "flex";
+    setTimeout(() => document.getElementById('notesModal').classList.add('active'), 10);
 }
 
 function closeNotesModal() {
     const modal = document.getElementById('notesModal');
     modal.classList.remove('active');
-    setTimeout(() => {
-        modal.style.display = "none";
-        currentRowId = null;
-    }, 300);
+    modal.style.display = "none";
+    currentRowId = null;
 }
 
 function saveNotes() {
@@ -761,22 +801,12 @@ function saveNotes() {
         if (data.message) {
             const row = document.querySelector(`[data-id='${currentRowId}']`);
             if (row) {
-                // Create a new notes button with the updated notes content
-                const notesCell = row.querySelector('td:nth-child(9)');
-                const sanitizedNotes = updatedNotes.replace(/'/g, "\\'"); // Escape single quotes
-                notesCell.innerHTML = `
-                    <button onclick="openNotesModal('${currentRowId}', '${sanitizedNotes}')" class='notes-button'>
+                row.querySelector('td:nth-child(9)').innerHTML = `
+                    <button onclick="openNotesModal('${currentRowId}', '${updatedNotes}')" class='notes-button'>
                         <i class='fas fa-sticky-note'></i>
                     </button>`;
             }
             closeNotesModal();
-            
-            // Optional: Add visual feedback
-            const notesButton = row.querySelector('.notes-button');
-            if (notesButton) {
-                notesButton.classList.add('action-success');
-                setTimeout(() => notesButton.classList.remove('action-success'), 500);
-            }
         } else if (data.error) {
             alert(data.error);
         }
@@ -789,67 +819,60 @@ function saveNotes() {
 
         function saveDescription() {
     const updatedDescription = document.getElementById('descriptionText').value;
+    
+    // Log the raw input
+    console.log('Raw description:', updatedDescription);
 
     if (!currentRowId) {
         console.error("No row ID available for updating description.");
         return;
     }
     
+    // Create the payload
+    const payload = {
+        id: currentRowId,
+        description: updatedDescription
+    };
+    
+    // Log the payload
+    console.log('Sending payload:', payload);
+    
     fetch('update_description.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
-            id: currentRowId,
-            description: updatedDescription
-        })
+        body: JSON.stringify(payload)
     })
     .then(response => {
-        // Log full response details for debugging
-        console.log('Response status:', response.status);
-        console.log('Response headers:', Object.fromEntries(response.headers.entries()));
+        // Log the raw response
+        response.clone().text().then(text => {
+            console.log('Raw response:', text);
+        });
         
-        // Check if response is ok
         if (!response.ok) {
-            // Try to get response text to see what's being returned
-            return response.text().then(text => {
-                console.error('Response text:', text);
-                throw new Error(`HTTP error! status: ${response.status}, response: ${text}`);
-            });
+            throw new Error('Network response was not ok');
         }
-        
-        // Check content type
-        const contentType = response.headers.get('content-type');
-        if (!contentType || !contentType.includes('application/json')) {
-            return response.text().then(text => {
-                console.error('Unexpected content type. Received:', text);
-                throw new Error(`Expected JSON, got: ${text}`);
-            });
-        }
-        
         return response.json();
     })
     .then(data => {
+        console.log('Parsed response:', data);
+        
         if (data.message) {
-            console.log(data.message);
             const row = document.querySelector(`[data-id='${currentRowId}']`);
             if (row) {
-                row.querySelector('td:nth-child(4)').innerHTML = `<span onclick="openDescriptionModal('${currentRowId}', '${updatedDescription}')" class='fa fa-sticky-note'></span>`;
+                row.querySelector('td:nth-child(4)').innerHTML = `
+                    <button onclick="openDescriptionModal('${currentRowId}', '${updatedDescription}')" class='description-button'>
+                        <i class='fas fa-file-alt'></i>
+                    </button>`;
             }
             closeDescriptionModal();
         } else if (data.error) {
-            console.error(data.error);
-            alert("Error: " + data.error);
+            throw new Error(data.error);
         }
     })
     .catch(error => {
-        // Log the full error details
-        console.error("Full error object:", error);
-        console.error("Error name:", error.name);
-        console.error("Error message:", error.message);
-        
-        // More detailed error alert
+        console.error("Error:", error);
         alert(`Failed to update description: ${error.message}`);
     });
 }
@@ -859,37 +882,23 @@ function editRow(row) {
     row.classList.add('edit-mode');
     let cells = row.querySelectorAll("td");
     
-    // Store the current notes and description values as data attributes on the row
-    const notesButton = cells[8].querySelector('.notes-button');
-    const descButton = cells[3].querySelector('.description-button');
-    
-    // Store original notes and description in data attributes
-    if (notesButton) {
-        const originalNotes = notesButton.getAttribute('onclick').match(/'([^']*)'/) || ['', ''];
-        row.setAttribute('data-original-notes', originalNotes[1]);
-    }
-    
-    if (descButton) {
-        const originalDesc = descButton.getAttribute('onclick').match(/'([^']*)'/) || ['', ''];
-        row.setAttribute('data-original-description', originalDesc[1]);
-    }
-    
     // Save original values and add edit fields
     for (let i = 0; i < cells.length - 1; i++) {
-        const cellContent = cells[i].innerText.trim();
-        cells[i].setAttribute('data-original', cellContent);
+        cells[i].setAttribute('data-original', cells[i].innerText);
         
-        if (i === 0) { // Type dropdown
-            cells[i].innerHTML = getDropdownHTML(cellContent);
+        if (i === 0) {
+            cells[i].innerHTML = getDropdownHTML(cells[i].innerText);
             cells[i].querySelector('select').addEventListener('change', () => hasChanges = true);
-        } else if (i === 6) { // Status dropdown
-            cells[i].innerHTML = getStatusDropdownHTML(cellContent);
+        } else if (i === 6) {
+            cells[i].innerHTML = getStatusDropdownHTML(cells[i].innerText);
             cells[i].querySelector('select').addEventListener('change', () => hasChanges = true);
-        } else if (i === 7) { // Tags
-            cells[i].innerHTML = `<input type="text" value="${cellContent}" placeholder="Enter tags (comma separated)">`;
+        } else if (i === 7) { // Tags column
+            const currentTags = cells[i].innerText;
+            cells[i].innerHTML = `<input type="text" value="${currentTags}" placeholder="Enter tags (comma separated)">`;
             cells[i].querySelector('input').addEventListener('input', () => hasChanges = true);
-        } else if (i !== 3 && i !== 8) { // Skip description and notes cells
-            cells[i].innerHTML = `<input type="text" value="${cellContent}">`;
+        } else if (i !== 3) { // Skip description cell
+            let currentValue = cells[i].innerText;
+            cells[i].innerHTML = `<input type="text" value="${currentValue}">`;
             cells[i].querySelector('input').addEventListener('input', () => hasChanges = true);
         }
     }
@@ -949,39 +958,57 @@ function saveRow(row) {
     }
 
     let cells = row.querySelectorAll("td");
-    
     let rowData = {
         id: id,
         type: cells[0].querySelector("select") ? cells[0].querySelector("select").value : cells[0].innerText,
         model_name: cells[1].querySelector("input") ? cells[1].querySelector("input").value : cells[1].innerText,
         quantity: cells[2].querySelector("input") ? cells[2].querySelector("input").value : cells[2].innerText,
-        description: row.getAttribute('data-original-description') || '',
+        description: cells[3].querySelector(".fa-file-alt") ? 
+            cells[3].getAttribute('data-description') || '' : 
+            cells[3].innerText,
         req_po_number: cells[4].querySelector("input") ? cells[4].querySelector("input").value : cells[4].innerText,
         order_date: cells[5].querySelector("input") ? cells[5].querySelector("input").value : cells[5].innerText,
         order_status: cells[6].querySelector("select") ? cells[6].querySelector("select").value : cells[6].innerText,
         tags: cells[7].querySelector("input") ? cells[7].querySelector("input").value : cells[7].innerText,
-        notes: row.getAttribute('data-original-notes') || '',
+        notes: cells[8].querySelector(".fa-sticky-note") ? 
+            cells[8].getAttribute('data-notes') || '' : 
+            cells[8].innerText,
         from_closed: window.location.href.includes('closed_records.php')
     };
 
+    // Debug log
+    console.log('Sending data:', rowData);
+
+    // Show loading indicator
     document.getElementById('loading').style.display = "flex";
 
     fetch('update_table.php', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
         },
         body: JSON.stringify(rowData)
     })
     .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
+        // Debug log
+        console.log('Response status:', response.status);
+        return response.text().then(text => {
+            console.log('Raw response:', text);
+            try {
+                return JSON.parse(text);
+            } catch (e) {
+                throw new Error(`Invalid JSON response: ${text}`);
+            }
+        });
     })
     .then(data => {
         document.getElementById('loading').style.display = "none";
         
+        if (data.error) {
+            throw new Error(data.error);
+        }
+
         if (data.message) {
             if (data.message.includes("moved to closed items") || 
                 data.message.includes("restored to active items")) {
@@ -992,89 +1019,67 @@ function saveRow(row) {
                 }, 300);
             } else {
                 restoreRowToViewMode(row, rowData);
-                updateTagFilter();
+                // Show success message
+                alert(data.message);
             }
-        } else if (data.error) {
-            throw new Error(data.error);
         }
     })
     .catch(error => {
         document.getElementById('loading').style.display = "none";
         console.error("Error:", error);
-        alert(error.message);
-        cancelEdit(row);
+        alert("Error saving changes: " + error.message);
     });
 }
 
 function cancelEdit(row) {
-    let cells = row.querySelectorAll("td");
-    
-    for (let i = 0; i < cells.length - 1; i++) {
-        const originalValue = cells[i].getAttribute('data-original');
-        if (originalValue === null) continue;
-        
-        const escapedValue = originalValue
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;")
-            .replace(/"/g, "&quot;")
-            .replace(/'/g, "&#039;");
-            
-        if (i === 3) { // Description
-            cells[i].innerHTML = `
-                <button onclick="openDescriptionModal('${row.getAttribute('data-id')}', '${escapedValue}')" class='description-button'>
-                    <i class='fas fa-file-alt'></i>
-                </button>`;
-        } else if (i === 8) { // Notes
-            cells[i].innerHTML = `
-                <button onclick="openNotesModal('${row.getAttribute('data-id')}', '${escapedValue}')" class='notes-button'>
-                    <i class='fas fa-sticky-note'></i>
-                </button>`;
-        } else {
-            cells[i].innerHTML = escapedValue;
-        }
-    }
+   let cells = row.querySelectorAll("td");
+   
+   for (let i = 0; i < cells.length - 1; i++) {
+       const originalValue = cells[i].getAttribute('data-original');
+       if (i === 3) {
+           cells[i].innerHTML = `
+               <button onclick="openDescriptionModal('${row.getAttribute('data-id')}', '${originalValue}')" class='description-button'>
+                   <i class='fas fa-file-alt'></i>
+               </button>`;
+       } else if (i === 8) {
+           cells[i].innerHTML = `
+               <button onclick="openNotesModal('${row.getAttribute('data-id')}', '${originalValue}')" class='notes-button'>
+                   <i class='fas fa-sticky-note'></i>
+               </button>`;
+       } else {
+           cells[i].innerHTML = originalValue;
+       }
+   }
 
-    const actionsCell = cells[cells.length - 1];
-    actionsCell.innerHTML = `
-        <div class='action-buttons'>
-            <button onclick="editRow(this.closest('tr'))" class="action-button edit">
-                <i class="fas fa-edit"></i> Edit
-            </button>
-            <button onclick="deleteRow(this.closest('tr'))" class="action-button delete">
-                <i class="fas fa-trash"></i> Delete
-            </button>
-        </div>
-    `;
+   const actionsCell = cells[cells.length - 1];
+   actionsCell.innerHTML = `
+       <div class='action-buttons'>
+           <button onclick="editRow(this.closest('tr'))" class="action-button edit">
+               <i class="fas fa-edit"></i> Edit
+           </button>
+           <button onclick="deleteRow(this.closest('tr'))" class="action-button delete">
+               <i class="fas fa-trash"></i> Delete
+           </button>
+       </div>
+   `;
 }
-
 
 function restoreRowToViewMode(row, data) {
     let cells = row.querySelectorAll("td");
     
-    // Helper function to escape HTML special characters
-    const escapeHtml = (unsafe) => {
-        return unsafe
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;")
-            .replace(/"/g, "&quot;")
-            .replace(/'/g, "&#039;");
-    };
-    
-    cells[0].innerHTML = escapeHtml(data.type);
-    cells[1].innerHTML = escapeHtml(data.model_name);
-    cells[2].innerHTML = escapeHtml(data.quantity);
+    cells[0].innerHTML = data.type;
+    cells[1].innerHTML = data.model_name;
+    cells[2].innerHTML = data.quantity;
     cells[3].innerHTML = `
-        <button onclick="openDescriptionModal('${data.id}', '${escapeHtml(data.description)}')" class='description-button'>
+        <button onclick="openDescriptionModal('${data.id}', '${data.description}')" class='description-button'>
             <i class='fas fa-file-alt'></i>
         </button>`;
-    cells[4].innerHTML = escapeHtml(data.req_po_number);
-    cells[5].innerHTML = escapeHtml(data.order_date);
-    cells[6].innerHTML = escapeHtml(data.order_status);
+    cells[4].innerHTML = data.req_po_number;
+    cells[5].innerHTML = data.order_date;
+    cells[6].innerHTML = data.order_status;
     cells[7].innerHTML = formatTagsHTML(data.tags);
     cells[8].innerHTML = `
-        <button onclick="openNotesModal('${data.id}', '${escapeHtml(data.notes)}')" class='notes-button'>
+        <button onclick="openNotesModal('${data.id}', '${data.notes}')" class='notes-button'>
             <i class='fas fa-sticky-note'></i>
         </button>`;
 
@@ -1089,12 +1094,7 @@ function restoreRowToViewMode(row, data) {
             </button>
         </div>
     `;
-    
-    // Clean up data attributes
-    row.removeAttribute('data-original-notes');
-    row.removeAttribute('data-original-description');
 }
-
 
         function updateButtonState(row, buttonText, buttonClass, onClickFunction) {
             let button = row.querySelector(".save-btn, .edit-btn");
@@ -1119,27 +1119,43 @@ function restoreRowToViewMode(row, data) {
         }
 
         function filterTable() {
-            const filterInput = document.getElementById("filterInput");
-            if (!filterInput) {
-                console.error("Filter input element not found");
-                return;
-            }
+            const input = document.getElementById('filterInput');
+            const filter = input.value.toLowerCase();
+            const table = document.getElementById('itemOrdersTable');
+            const rows = table.getElementsByTagName('tr');
 
-            const filterValue = filterInput.value.trim().toLowerCase();
-            const table = document.getElementById("itemOrdersTable");
-            if (!table) {
-                console.error("Table element not found");
-                return;
-            }
+            for (let i = 1; i < rows.length; i++) {
+                const row = rows[i];
+                const type = row.cells[0].textContent.toLowerCase();
+                const modelName = row.cells[1].textContent.toLowerCase();
+                const reqNumber = row.cells[4].textContent.toLowerCase();
+                const tags = Array.from(row.cells[7].querySelectorAll('.tag'))
+                    .map(tag => tag.textContent.toLowerCase())
+                    .join(' ');
 
-            const rows = table.getElementsByTagName("tr");
-            reusableFilterLogic(rows, filterValue);
+                if (type.includes(filter) || 
+                    modelName.includes(filter) || 
+                    reqNumber.includes(filter) || 
+                    tags.includes(filter)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            }
         }
 
+        // Add event listener for real-time search
+        document.getElementById('filterInput').addEventListener('keyup', filterTable);
+
         function showAll() {
+            document.getElementById('filterInput').value = '';
+            document.getElementById('tagFilter').value = '';
+            
             const table = document.getElementById("itemOrdersTable");
             const rows = table.getElementsByTagName("tr");
-            reusableFilterLogic(rows, "");
+            for (let i = 1; i < rows.length; i++) {
+                rows[i].style.display = "";
+            }
         }
 
         function showModal() {
@@ -1161,13 +1177,15 @@ function restoreRowToViewMode(row, data) {
             let id = row.getAttribute('data-id');
 
             if (confirm("Are you sure you want to delete this record?")) {
-                document.getElementById('loading').style.display = "block";
+                document.getElementById('loading').style.display = "flex";
+                
+                // Create FormData object
+                const formData = new FormData();
+                formData.append('id', id);
+
                 fetch('delete_record.php', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ id: id })
+                    body: formData
                 })
                 .then(response => {
                     if (!response.ok) {
@@ -1177,12 +1195,13 @@ function restoreRowToViewMode(row, data) {
                 })
                 .then(data => {
                     document.getElementById('loading').style.display = "none";
-                    if (data.message) {
-                        console.log(data.message);
-                        row.remove();
-                    } else if (data.error) {
-                        console.error(data.error);
-                        alert("Error: " + data.error);
+                    if (data.success) {
+                        row.style.opacity = '0';
+                        setTimeout(() => {
+                            row.remove();
+                        }, 300);
+                    } else {
+                        alert("Error: " + (data.error || "Failed to delete record"));
                     }
                 })
                 .catch(error => {
@@ -1198,17 +1217,19 @@ function restoreRowToViewMode(row, data) {
 function toggleDateSort() {
     const icon = document.getElementById('dateSortIcon');
     
-    // Toggle sort order
-    if (currentDateSort === 'none' || currentDateSort === 'desc') {
+    if (currentDateSort === 'none') {
         currentDateSort = 'asc';
         icon.className = 'fas fa-sort-up';
-    } else {
+        loadSortedData();
+    } else if (currentDateSort === 'asc') {
         currentDateSort = 'desc';
         icon.className = 'fas fa-sort-down';
+        loadSortedData();
+    } else {
+        currentDateSort = 'none';
+        icon.className = 'fas fa-sort';
+        restoreOriginalOrder();
     }
-    
-    // Reload table with new sort order
-    loadSortedData();
 }
 
 function loadSortedData() {
@@ -1240,7 +1261,7 @@ function updateTagFilter() {
     const rows = document.querySelectorAll('#itemOrdersTable tbody tr');
     rows.forEach(row => {
         const tagSpans = row.querySelectorAll('.tag');
-        tagSpans.forEach(span => tagSet.add(span.textContent));
+        tagSpans.forEach(span => tagSet.add(span.textContent.trim()));
     });
 
     const tagFilter = document.getElementById('tagFilter');
@@ -1258,8 +1279,10 @@ function updateTagFilter() {
 
 function filterByTag(tag) {
     const rows = document.querySelectorAll('#itemOrdersTable tbody tr');
+    
     rows.forEach(row => {
         const tags = Array.from(row.querySelectorAll('.tag')).map(t => t.textContent);
+        
         if (!tag || tags.includes(tag)) {
             row.style.display = '';
         } else {
@@ -1293,7 +1316,241 @@ function showModal() {
     setTimeout(() => modal.classList.add('active'), 10);
 }
 
+function openNotesModal(id, notes) {
+    document.getElementById('descriptionText').value = notes;
+    document.getElementById('notesModal').style.display = 'flex';
+    currentRowId = id;
+}
 
+let currentStatusSort = 'none'; // Possible values: 'none', 'asc', 'desc'
+
+function toggleStatusSort() {
+    const icon = document.getElementById('statusSortIcon');
+    
+    if (currentStatusSort === 'none') {
+        currentStatusSort = 'asc';
+        icon.className = 'fas fa-sort-up';
+        sortTableByStatus();
+    } else if (currentStatusSort === 'asc') {
+        currentStatusSort = 'desc';
+        icon.className = 'fas fa-sort-down';
+        sortTableByStatus();
+    } else {
+        currentStatusSort = 'none';
+        icon.className = 'fas fa-sort';
+        restoreOriginalOrder();
+    }
+}
+
+function sortTableByStatus() {
+    const tbody = document.querySelector('#itemOrdersTable tbody');
+    const rows = Array.from(tbody.querySelectorAll('tr'));
+    
+    rows.sort((a, b) => {
+        const statusA = a.querySelector('td:nth-child(7)').textContent.trim();
+        const statusB = b.querySelector('td:nth-child(7)').textContent.trim();
+        
+        if (currentStatusSort === 'asc') {
+            return statusA.localeCompare(statusB);
+        } else {
+            return statusB.localeCompare(statusA);
+        }
+    });
+    
+    // Clear the table body
+    tbody.innerHTML = '';
+    
+    // Add sorted rows back
+    rows.forEach(row => tbody.appendChild(row.cloneNode(true)));
+}
+
+let currentTagSort = 'none'; // Possible values: 'none', 'asc', 'desc'
+
+function toggleTagSort() {
+    const icon = document.getElementById('tagSortIcon');
+    
+    if (currentTagSort === 'none') {
+        currentTagSort = 'asc';
+        icon.className = 'fas fa-sort-up';
+        sortTableByTags();
+    } else if (currentTagSort === 'asc') {
+        currentTagSort = 'desc';
+        icon.className = 'fas fa-sort-down';
+        sortTableByTags();
+    } else {
+        currentTagSort = 'none';
+        icon.className = 'fas fa-sort';
+        restoreOriginalOrder();
+    }
+}
+
+function sortTableByTags() {
+    const tbody = document.querySelector('#itemOrdersTable tbody');
+    const rows = Array.from(tbody.querySelectorAll('tr'));
+    
+    rows.sort((a, b) => {
+        // Get all tags from the cells and join them into a single string for comparison
+        const tagsA = Array.from(a.querySelector('td:nth-child(8)').querySelectorAll('.tag'))
+            .map(tag => tag.textContent.trim())
+            .sort()
+            .join(', ') || ''; // Handle empty tags
+        
+        const tagsB = Array.from(b.querySelector('td:nth-child(8)').querySelectorAll('.tag'))
+            .map(tag => tag.textContent.trim())
+            .sort()
+            .join(', ') || ''; // Handle empty tags
+        
+        if (currentTagSort === 'asc') {
+            return tagsA.localeCompare(tagsB);
+        } else {
+            return tagsB.localeCompare(tagsA);
+        }
+    });
+    
+    // Clear the table body
+    tbody.innerHTML = '';
+    
+    // Add sorted rows back
+    rows.forEach(row => tbody.appendChild(row.cloneNode(true)));
+}
+
+function filterByStatus(status) {
+    const rows = document.querySelectorAll('#itemOrdersTable tbody tr');
+    rows.forEach(row => {
+        const statusCell = row.querySelector('td:nth-child(7)'); // 7th column is Order Status
+        if (!status || statusCell.textContent.trim() === status) {
+            // Only show the row if it's not already hidden by tag filter
+            if (!row.style.display || row.style.display === '') {
+                const tagFilter = document.getElementById('tagFilter').value;
+                if (!tagFilter || Array.from(row.querySelectorAll('.tag')).some(t => t.textContent === tagFilter)) {
+                    row.style.display = '';
+                }
+            }
+        } else {
+            row.style.display = 'none';
+        }
+    });
+}
+
+// Store original order when the page loads
+let originalOrder = [];
+
+// Store the original order when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    const tbody = document.querySelector('#itemOrdersTable tbody');
+    originalOrder = Array.from(tbody.querySelectorAll('tr')).map(row => row.cloneNode(true));
+});
+
+// Function to restore the original order
+function restoreOriginalOrder() {
+    const tbody = document.querySelector('#itemOrdersTable tbody');
+    tbody.innerHTML = '';
+    originalOrder.forEach(row => {
+        tbody.appendChild(row.cloneNode(true));
+    });
+}
+
+// Update all toggle functions to properly handle the third click
+function toggleTypeSort() {
+    const icon = document.getElementById('typeSortIcon');
+    
+    if (currentTypeSort === 'none') {
+        currentTypeSort = 'asc';
+        icon.className = 'fas fa-sort-up';
+        sortTableByType();
+    } else if (currentTypeSort === 'asc') {
+        currentTypeSort = 'desc';
+        icon.className = 'fas fa-sort-down';
+        sortTableByType();
+    } else {
+        currentTypeSort = 'none';
+        icon.className = 'fas fa-sort';
+        restoreOriginalOrder();
+    }
+}
+
+function toggleModelSort() {
+    const icon = document.getElementById('modelSortIcon');
+    
+    if (currentModelSort === 'none') {
+        currentModelSort = 'asc';
+        icon.className = 'fas fa-sort-up';
+        sortTableByModel();
+    } else if (currentModelSort === 'asc') {
+        currentModelSort = 'desc';
+        icon.className = 'fas fa-sort-down';
+        sortTableByModel();
+    } else {
+        currentModelSort = 'none';
+        icon.className = 'fas fa-sort';
+        restoreOriginalOrder();
+    }
+}
+
+function toggleDateSort() {
+    const icon = document.getElementById('dateSortIcon');
+    
+    if (currentDateSort === 'none') {
+        currentDateSort = 'asc';
+        icon.className = 'fas fa-sort-up';
+        loadSortedData();
+    } else if (currentDateSort === 'asc') {
+        currentDateSort = 'desc';
+        icon.className = 'fas fa-sort-down';
+        loadSortedData();
+    } else {
+        currentDateSort = 'none';
+        icon.className = 'fas fa-sort';
+        restoreOriginalOrder();
+    }
+}
+
+// Update the sort functions to maintain event listeners
+function sortTableByType() {
+    const tbody = document.querySelector('#itemOrdersTable tbody');
+    const rows = Array.from(tbody.querySelectorAll('tr'));
+    
+    rows.sort((a, b) => {
+        const typeA = a.querySelector('td:nth-child(1)').textContent.trim();
+        const typeB = b.querySelector('td:nth-child(1)').textContent.trim();
+        
+        if (currentTypeSort === 'asc') {
+            return typeA.localeCompare(typeB);
+        } else {
+            return typeB.localeCompare(typeA);
+        }
+    });
+    
+    tbody.innerHTML = '';
+    rows.forEach(row => tbody.appendChild(row.cloneNode(true)));
+}
+
+// Sort function for Model Name column
+function sortTableByModel() {
+    const tbody = document.querySelector('#itemOrdersTable tbody');
+    const rows = Array.from(tbody.querySelectorAll('tr'));
+    
+    rows.sort((a, b) => {
+        const modelA = a.querySelector('td:nth-child(2)').textContent.trim();
+        const modelB = b.querySelector('td:nth-child(2)').textContent.trim();
+        
+        if (currentModelSort === 'asc') {
+            return modelA.localeCompare(modelB);
+        } else {
+            return modelB.localeCompare(modelA);
+        }
+    });
+    
+    // Clear the table body
+    tbody.innerHTML = '';
+    
+    // Add sorted rows back
+    rows.forEach(row => tbody.appendChild(row.cloneNode(true)));
+}
+
+// Make sure these variables are declared at the top of your script
+let currentTypeSort = 'none';
+let currentModelSort = 'none';
     </script>
 
 

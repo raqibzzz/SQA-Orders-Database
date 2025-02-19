@@ -19,12 +19,21 @@ try {
     $sql = "INSERT INTO item_orders (Type, Model_Name, Quantity, Description, REQ_PO_Number, Order_Date, Order_Status, Tags, Notes) 
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
     
-    $types = "ssissssss"; // string, string, integer, string, string, string, string, string, string
-    $params = [$type, $model_name, $quantity, $description, $req_po_number, $order_date, $order_status, $tags, $notes];
+    $stmt = $db->prepare($sql);
+    $stmt->bind_param("ssissssss", 
+        $type, 
+        $model_name, 
+        $quantity, 
+        $description, 
+        $req_po_number, 
+        $order_date, 
+        $order_status, 
+        $tags, 
+        $notes
+    );
+    $success = $stmt->execute();
     
-    $stmt = $db->secureQuery($sql, $types, $params);
-    
-    if ($stmt) {
+    if ($success) {
         header("Location: frontend.php");
     } else {
         throw new Exception("Error adding record");

@@ -4,10 +4,10 @@ class Database {
     private $connection;
     
     private $config = [
-        'host' => '192.168.180.246',
+        'host' => '192.168.180.215',
         'username' => 'xautosqa',
         'password' => 'x56789',
-        'dbname' => 'inventory',
+        'dbname' => 'item_orders_db',
         'port' => 3306
     ];
 

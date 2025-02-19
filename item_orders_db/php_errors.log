@@ -1,0 +1,1253 @@
+[07-Feb-2025 18:05:58 Europe/Paris] Received raw input: {"id":"39","type":"PC Parts","model_name":"Kingston SSD","quantity":"1","description":"","req_po_number":"12345","order_date":"2025-02-06","order_status":"Received","tags":"DUMMY","notes":"","from_closed":false}
+[07-Feb-2025 18:05:58 Europe/Paris] Decoded data: Array
+(
+    [id] => 39
+    [type] => PC Parts
+    [model_name] => Kingston SSD
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 12345
+    [order_date] => 2025-02-06
+    [order_status] => Received
+    [tags] => DUMMY
+    [notes] => 
+    [from_closed] => 
+)
+
+[07-Feb-2025 18:05:58 Europe/Paris] Executing update on table: item_orders
+[07-Feb-2025 18:05:58 Europe/Paris] Binding parameters: Array
+(
+    [type] => PC Parts
+    [model_name] => Kingston SSD
+    [quantity] => 1
+    [req_po_number] => 12345
+    [order_date] => 2025-02-06
+    [order_status] => Received
+    [id] => 39
+)
+
+[07-Feb-2025 18:06:15 Europe/Paris] Received raw input: {"id":"39","type":"PC Parts","model_name":"Kingston SSD","quantity":"1","description":"","req_po_number":"12345","order_date":"2025-02-06","order_status":"Ordered","tags":"DUMMY","notes":"","from_closed":false}
+[07-Feb-2025 18:06:15 Europe/Paris] Decoded data: Array
+(
+    [id] => 39
+    [type] => PC Parts
+    [model_name] => Kingston SSD
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 12345
+    [order_date] => 2025-02-06
+    [order_status] => Ordered
+    [tags] => DUMMY
+    [notes] => 
+    [from_closed] => 
+)
+
+[07-Feb-2025 18:06:15 Europe/Paris] Executing update on table: item_orders
+[07-Feb-2025 18:06:15 Europe/Paris] Binding parameters: Array
+(
+    [type] => PC Parts
+    [model_name] => Kingston SSD
+    [quantity] => 1
+    [req_po_number] => 12345
+    [order_date] => 2025-02-06
+    [order_status] => Ordered
+    [id] => 39
+)
+
+[10-Feb-2025 15:59:11 Europe/Paris] Received raw input: {"id":"39","type":"PC Parts","model_name":"Kingston SSD","quantity":"1","description":"","req_po_number":"12345","order_date":"2025-02-06","order_status":"Received","tags":"DUMMY","notes":"","from_closed":false}
+[10-Feb-2025 15:59:11 Europe/Paris] Decoded data: Array
+(
+    [id] => 39
+    [type] => PC Parts
+    [model_name] => Kingston SSD
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 12345
+    [order_date] => 2025-02-06
+    [order_status] => Received
+    [tags] => DUMMY
+    [notes] => 
+    [from_closed] => 
+)
+
+[10-Feb-2025 15:59:11 Europe/Paris] Executing update on table: item_orders
+[10-Feb-2025 15:59:11 Europe/Paris] Binding parameters: Array
+(
+    [type] => PC Parts
+    [model_name] => Kingston SSD
+    [quantity] => 1
+    [req_po_number] => 12345
+    [order_date] => 2025-02-06
+    [order_status] => Received
+    [id] => 39
+)
+
+[10-Feb-2025 15:59:38 Europe/Paris] Received raw input: {"id":"39","type":"PC Parts","model_name":"Kingston SSD","quantity":"1","description":"","req_po_number":"12345","order_date":"2025-02-06","order_status":"Closed","tags":"DUMMY","notes":"","from_closed":false}
+[10-Feb-2025 15:59:38 Europe/Paris] Decoded data: Array
+(
+    [id] => 39
+    [type] => PC Parts
+    [model_name] => Kingston SSD
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 12345
+    [order_date] => 2025-02-06
+    [order_status] => Closed
+    [tags] => DUMMY
+    [notes] => 
+    [from_closed] => 
+)
+
+[10-Feb-2025 15:59:38 Europe/Paris] Executing update on table: item_orders
+[10-Feb-2025 15:59:38 Europe/Paris] Binding parameters: Array
+(
+    [type] => PC Parts
+    [model_name] => Kingston SSD
+    [quantity] => 1
+    [req_po_number] => 12345
+    [order_date] => 2025-02-06
+    [order_status] => Closed
+    [id] => 39
+)
+
+[10-Feb-2025 16:25:30 Europe/Paris] Received raw input: {"id":"39","type":"PC Parts","model_name":"Kingston SSD","quantity":"1","description":"","req_po_number":"12345","order_date":"2025-02-06","order_status":"Received","tags":"DUMMY","notes":"","from_closed":false}
+[10-Feb-2025 16:25:30 Europe/Paris] Decoded data: Array
+(
+    [id] => 39
+    [type] => PC Parts
+    [model_name] => Kingston SSD
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 12345
+    [order_date] => 2025-02-06
+    [order_status] => Received
+    [tags] => DUMMY
+    [notes] => 
+    [from_closed] => 
+)
+
+[10-Feb-2025 16:25:30 Europe/Paris] Executing update on table: item_orders
+[10-Feb-2025 16:25:30 Europe/Paris] Binding parameters: Array
+(
+    [type] => PC Parts
+    [model_name] => Kingston SSD
+    [quantity] => 1
+    [req_po_number] => 12345
+    [order_date] => 2025-02-06
+    [order_status] => Received
+    [id] => 39
+)
+
+[11-Feb-2025 15:54:16 Europe/Paris] Received raw input: {"id":"40","type":"Other","model_name":"Elgato Stream Studio Controller","quantity":"1","description":"","req_po_number":"13325","order_date":"2025-01-30","order_status":"Received","tags":"Origin","notes":"","from_closed":false}
+[11-Feb-2025 15:54:16 Europe/Paris] Decoded data: Array
+(
+    [id] => 40
+    [type] => Other
+    [model_name] => Elgato Stream Studio Controller
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 13325
+    [order_date] => 2025-01-30
+    [order_status] => Received
+    [tags] => Origin
+    [notes] => 
+    [from_closed] => 
+)
+
+[11-Feb-2025 15:54:16 Europe/Paris] Executing update on table: item_orders
+[11-Feb-2025 15:54:16 Europe/Paris] Binding parameters: Array
+(
+    [type] => Other
+    [model_name] => Elgato Stream Studio Controller
+    [quantity] => 1
+    [req_po_number] => 13325
+    [order_date] => 2025-01-30
+    [order_status] => Received
+    [id] => 40
+)
+
+[11-Feb-2025 16:41:48 Europe/Paris] Received raw input: {"id":"39","type":"PC Parts","model_name":"Kingston SSD","quantity":"1","description":"","req_po_number":"12345","order_date":"2025-02-06","order_status":"Received","tags":"DUMMY","notes":"","from_closed":false}
+[11-Feb-2025 16:41:48 Europe/Paris] Decoded data: Array
+(
+    [id] => 39
+    [type] => PC Parts
+    [model_name] => Kingston SSD
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 12345
+    [order_date] => 2025-02-06
+    [order_status] => Received
+    [tags] => DUMMY
+    [notes] => 
+    [from_closed] => 
+)
+
+[11-Feb-2025 16:41:48 Europe/Paris] Executing update on table: item_orders
+[11-Feb-2025 16:41:48 Europe/Paris] Binding parameters: Array
+(
+    [type] => PC Parts
+    [model_name] => Kingston SSD
+    [quantity] => 1
+    [req_po_number] => 12345
+    [order_date] => 2025-02-06
+    [order_status] => Received
+    [id] => 39
+)
+
+[11-Feb-2025 16:41:48 Europe/Paris] No rows affected by update. SQL Error: 
+[11-Feb-2025 16:41:48 Europe/Paris] Error in update_table.php: No changes made or record not found
+[11-Feb-2025 16:41:48 Europe/Paris] Stack trace: #0 {main}
+[12-Feb-2025 19:33:05 Europe/Paris] Received raw input: {"id":"18","type":"PC Parts","model_name":"PC Case","quantity":"1","description":"","req_po_number":"13319","order_date":"2024-12-05","order_status":"Ordered","tags":"LE6 Automation","notes":"","from_closed":false}
+[12-Feb-2025 19:33:05 Europe/Paris] Decoded data: Array
+(
+    [id] => 18
+    [type] => PC Parts
+    [model_name] => PC Case
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 13319
+    [order_date] => 2024-12-05
+    [order_status] => Ordered
+    [tags] => LE6 Automation
+    [notes] => 
+    [from_closed] => 
+)
+
+[12-Feb-2025 19:33:05 Europe/Paris] Executing update on table: item_orders
+[12-Feb-2025 19:33:05 Europe/Paris] Binding parameters: Array
+(
+    [type] => PC Parts
+    [model_name] => PC Case
+    [quantity] => 1
+    [req_po_number] => 13319
+    [order_date] => 2024-12-05
+    [order_status] => Ordered
+    [id] => 18
+)
+
+[12-Feb-2025 19:33:24 Europe/Paris] Received raw input: {"id":"38","type":"PC Parts","model_name":"PC Case","quantity":"1","description":"","req_po_number":"13319","order_date":"2024-12-05","order_status":"Received","tags":"2nd UnReal QA PC","notes":"","from_closed":false}
+[12-Feb-2025 19:33:24 Europe/Paris] Decoded data: Array
+(
+    [id] => 38
+    [type] => PC Parts
+    [model_name] => PC Case
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 13319
+    [order_date] => 2024-12-05
+    [order_status] => Received
+    [tags] => 2nd UnReal QA PC
+    [notes] => 
+    [from_closed] => 
+)
+
+[12-Feb-2025 19:33:24 Europe/Paris] Executing update on table: item_orders
+[12-Feb-2025 19:33:24 Europe/Paris] Binding parameters: Array
+(
+    [type] => PC Parts
+    [model_name] => PC Case
+    [quantity] => 1
+    [req_po_number] => 13319
+    [order_date] => 2024-12-05
+    [order_status] => Received
+    [id] => 38
+)
+
+[12-Feb-2025 19:33:37 Europe/Paris] Received raw input: {"id":"38","type":"PC Parts","model_name":"PC Case","quantity":"1","description":"","req_po_number":"13319","order_date":"2024-12-05","order_status":"Received","tags":"2nd UnReal PC - SQA","notes":"","from_closed":false}
+[12-Feb-2025 19:33:37 Europe/Paris] Decoded data: Array
+(
+    [id] => 38
+    [type] => PC Parts
+    [model_name] => PC Case
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 13319
+    [order_date] => 2024-12-05
+    [order_status] => Received
+    [tags] => 2nd UnReal PC - SQA
+    [notes] => 
+    [from_closed] => 
+)
+
+[12-Feb-2025 19:33:37 Europe/Paris] Executing update on table: item_orders
+[12-Feb-2025 19:33:37 Europe/Paris] Binding parameters: Array
+(
+    [type] => PC Parts
+    [model_name] => PC Case
+    [quantity] => 1
+    [req_po_number] => 13319
+    [order_date] => 2024-12-05
+    [order_status] => Received
+    [id] => 38
+)
+
+[12-Feb-2025 19:36:22 Europe/Paris] Received raw input: {"id":"34","type":"CPU","model_name":"Intel Xeon","quantity":"1","description":"","req_po_number":"13314","order_date":"2024-12-05","order_status":"Received","tags":"2nd UnReal PC - SQA","notes":"","from_closed":false}
+[12-Feb-2025 19:36:22 Europe/Paris] Decoded data: Array
+(
+    [id] => 34
+    [type] => CPU
+    [model_name] => Intel Xeon
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 13314
+    [order_date] => 2024-12-05
+    [order_status] => Received
+    [tags] => 2nd UnReal PC - SQA
+    [notes] => 
+    [from_closed] => 
+)
+
+[12-Feb-2025 19:36:22 Europe/Paris] Executing update on table: item_orders
+[12-Feb-2025 19:36:22 Europe/Paris] Binding parameters: Array
+(
+    [type] => CPU
+    [model_name] => Intel Xeon
+    [quantity] => 1
+    [req_po_number] => 13314
+    [order_date] => 2024-12-05
+    [order_status] => Received
+    [id] => 34
+)
+
+[12-Feb-2025 19:36:26 Europe/Paris] Received raw input: {"id":"38","type":"PC Parts","model_name":"PC Case","quantity":"1","description":"","req_po_number":"13319","order_date":"2024-12-05","order_status":"Received","tags":"2nd UnReal PC - SQA","notes":"","from_closed":false}
+[12-Feb-2025 19:36:26 Europe/Paris] Decoded data: Array
+(
+    [id] => 38
+    [type] => PC Parts
+    [model_name] => PC Case
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 13319
+    [order_date] => 2024-12-05
+    [order_status] => Received
+    [tags] => 2nd UnReal PC - SQA
+    [notes] => 
+    [from_closed] => 
+)
+
+[12-Feb-2025 19:36:26 Europe/Paris] Executing update on table: item_orders
+[12-Feb-2025 19:36:26 Europe/Paris] Binding parameters: Array
+(
+    [type] => PC Parts
+    [model_name] => PC Case
+    [quantity] => 1
+    [req_po_number] => 13319
+    [order_date] => 2024-12-05
+    [order_status] => Received
+    [id] => 38
+)
+
+[12-Feb-2025 19:36:26 Europe/Paris] No rows affected by update. SQL Error: 
+[12-Feb-2025 19:36:26 Europe/Paris] Error in update_table.php: No changes made or record not found
+[12-Feb-2025 19:36:26 Europe/Paris] Stack trace: #0 {main}
+[12-Feb-2025 19:36:29 Europe/Paris] Received raw input: {"id":"38","type":"PC Parts","model_name":"PC Case","quantity":"1","description":"","req_po_number":"13319","order_date":"2024-12-05","order_status":"Received","tags":"2nd UnReal PC - SQA","notes":"","from_closed":false}
+[12-Feb-2025 19:36:29 Europe/Paris] Decoded data: Array
+(
+    [id] => 38
+    [type] => PC Parts
+    [model_name] => PC Case
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 13319
+    [order_date] => 2024-12-05
+    [order_status] => Received
+    [tags] => 2nd UnReal PC - SQA
+    [notes] => 
+    [from_closed] => 
+)
+
+[12-Feb-2025 19:36:29 Europe/Paris] Executing update on table: item_orders
+[12-Feb-2025 19:36:29 Europe/Paris] Binding parameters: Array
+(
+    [type] => PC Parts
+    [model_name] => PC Case
+    [quantity] => 1
+    [req_po_number] => 13319
+    [order_date] => 2024-12-05
+    [order_status] => Received
+    [id] => 38
+)
+
+[12-Feb-2025 19:36:29 Europe/Paris] No rows affected by update. SQL Error: 
+[12-Feb-2025 19:36:29 Europe/Paris] Error in update_table.php: No changes made or record not found
+[12-Feb-2025 19:36:29 Europe/Paris] Stack trace: #0 {main}
+[12-Feb-2025 19:36:37 Europe/Paris] Received raw input: {"id":"38","type":"PC Parts","model_name":"PC Case","quantity":"1","description":"","req_po_number":"13319","order_date":"2024-12-05","order_status":"Received","tags":"2nd UnReal PC - SQA","notes":"","from_closed":false}
+[12-Feb-2025 19:36:37 Europe/Paris] Decoded data: Array
+(
+    [id] => 38
+    [type] => PC Parts
+    [model_name] => PC Case
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 13319
+    [order_date] => 2024-12-05
+    [order_status] => Received
+    [tags] => 2nd UnReal PC - SQA
+    [notes] => 
+    [from_closed] => 
+)
+
+[12-Feb-2025 19:36:37 Europe/Paris] Executing update on table: item_orders
+[12-Feb-2025 19:36:37 Europe/Paris] Binding parameters: Array
+(
+    [type] => PC Parts
+    [model_name] => PC Case
+    [quantity] => 1
+    [req_po_number] => 13319
+    [order_date] => 2024-12-05
+    [order_status] => Received
+    [id] => 38
+)
+
+[12-Feb-2025 19:36:37 Europe/Paris] No rows affected by update. SQL Error: 
+[12-Feb-2025 19:36:37 Europe/Paris] Error in update_table.php: No changes made or record not found
+[12-Feb-2025 19:36:37 Europe/Paris] Stack trace: #0 {main}
+[12-Feb-2025 19:37:32 Europe/Paris] Received raw input: {"id":"38","type":"PC Parts","model_name":"PC Case","quantity":"1","description":"","req_po_number":"13319","order_date":"2024-12-05","order_status":"Received","tags":"","notes":"","from_closed":false}
+[12-Feb-2025 19:37:32 Europe/Paris] Decoded data: Array
+(
+    [id] => 38
+    [type] => PC Parts
+    [model_name] => PC Case
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 13319
+    [order_date] => 2024-12-05
+    [order_status] => Received
+    [tags] => 
+    [notes] => 
+    [from_closed] => 
+)
+
+[12-Feb-2025 19:37:32 Europe/Paris] Executing update on table: item_orders
+[12-Feb-2025 19:37:32 Europe/Paris] Binding parameters: Array
+(
+    [type] => PC Parts
+    [model_name] => PC Case
+    [quantity] => 1
+    [req_po_number] => 13319
+    [order_date] => 2024-12-05
+    [order_status] => Received
+    [id] => 38
+)
+
+[12-Feb-2025 19:37:41 Europe/Paris] Received raw input: {"id":"38","type":"PC Parts","model_name":"PC Case","quantity":"1","description":"","req_po_number":"13319","order_date":"2024-12-05","order_status":"Received","tags":"2nd UnReal PC - SQA","notes":"","from_closed":false}
+[12-Feb-2025 19:37:41 Europe/Paris] Decoded data: Array
+(
+    [id] => 38
+    [type] => PC Parts
+    [model_name] => PC Case
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 13319
+    [order_date] => 2024-12-05
+    [order_status] => Received
+    [tags] => 2nd UnReal PC - SQA
+    [notes] => 
+    [from_closed] => 
+)
+
+[12-Feb-2025 19:37:41 Europe/Paris] Executing update on table: item_orders
+[12-Feb-2025 19:37:41 Europe/Paris] Binding parameters: Array
+(
+    [type] => PC Parts
+    [model_name] => PC Case
+    [quantity] => 1
+    [req_po_number] => 13319
+    [order_date] => 2024-12-05
+    [order_status] => Received
+    [id] => 38
+)
+
+[12-Feb-2025 19:38:23 Europe/Paris] Received raw input: {"id":"19","type":"Power Supply","model_name":"Antec Power Supply","quantity":"1","description":"","req_po_number":"13320","order_date":"2024-12-05","order_status":"Ordered","tags":"2nd UnReal PC - SQA","notes":"","from_closed":false}
+[12-Feb-2025 19:38:23 Europe/Paris] Decoded data: Array
+(
+    [id] => 19
+    [type] => Power Supply
+    [model_name] => Antec Power Supply
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 13320
+    [order_date] => 2024-12-05
+    [order_status] => Ordered
+    [tags] => 2nd UnReal PC - SQA
+    [notes] => 
+    [from_closed] => 
+)
+
+[12-Feb-2025 19:38:23 Europe/Paris] Executing update on table: item_orders
+[12-Feb-2025 19:38:23 Europe/Paris] Binding parameters: Array
+(
+    [type] => Power Supply
+    [model_name] => Antec Power Supply
+    [quantity] => 1
+    [req_po_number] => 13320
+    [order_date] => 2024-12-05
+    [order_status] => Ordered
+    [id] => 19
+)
+
+[12-Feb-2025 19:45:35 Europe/Paris] Received raw input: {"id":"30","type":"Drive","model_name":"KINGSTON 240GB INTERNAL SSD","quantity":"1","description":"","req_po_number":"13318","order_date":"2024-12-18","order_status":"Received","tags":"2nd UnReal PC - SQA","notes":"","from_closed":false}
+[12-Feb-2025 19:45:35 Europe/Paris] Decoded data: Array
+(
+    [id] => 30
+    [type] => Drive
+    [model_name] => KINGSTON 240GB INTERNAL SSD
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 13318
+    [order_date] => 2024-12-18
+    [order_status] => Received
+    [tags] => 2nd UnReal PC - SQA
+    [notes] => 
+    [from_closed] => 
+)
+
+[12-Feb-2025 19:45:36 Europe/Paris] Executing update on table: item_orders
+[12-Feb-2025 19:45:36 Europe/Paris] Binding parameters: Array
+(
+    [type] => Drive
+    [model_name] => KINGSTON 240GB INTERNAL SSD
+    [quantity] => 1
+    [req_po_number] => 13318
+    [order_date] => 2024-12-18
+    [order_status] => Received
+    [id] => 30
+)
+
+[12-Feb-2025 19:45:44 Europe/Paris] Received raw input: {"id":"28","type":"Drive","model_name":"KINGSTON 2.5\" INTERNAL SSD 480 GB","quantity":"1","description":"","req_po_number":"13317","order_date":"2024-12-18","order_status":"Received","tags":"2nd UnReal PC - SQA","notes":"","from_closed":false}
+[12-Feb-2025 19:45:44 Europe/Paris] Decoded data: Array
+(
+    [id] => 28
+    [type] => Drive
+    [model_name] => KINGSTON 2.5" INTERNAL SSD 480 GB
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 13317
+    [order_date] => 2024-12-18
+    [order_status] => Received
+    [tags] => 2nd UnReal PC - SQA
+    [notes] => 
+    [from_closed] => 
+)
+
+[12-Feb-2025 19:45:44 Europe/Paris] Executing update on table: item_orders
+[12-Feb-2025 19:45:44 Europe/Paris] Binding parameters: Array
+(
+    [type] => Drive
+    [model_name] => KINGSTON 2.5" INTERNAL SSD 480 GB
+    [quantity] => 1
+    [req_po_number] => 13317
+    [order_date] => 2024-12-18
+    [order_status] => Received
+    [id] => 28
+)
+
+[12-Feb-2025 19:46:15 Europe/Paris] Received raw input: {"id":"18","type":"PC Parts","model_name":"PC Case","quantity":"1","description":"","req_po_number":"13319","order_date":"2024-12-05","order_status":"Ordered","tags":"LE6 Automation","notes":"","from_closed":false}
+[12-Feb-2025 19:46:15 Europe/Paris] Decoded data: Array
+(
+    [id] => 18
+    [type] => PC Parts
+    [model_name] => PC Case
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 13319
+    [order_date] => 2024-12-05
+    [order_status] => Ordered
+    [tags] => LE6 Automation
+    [notes] => 
+    [from_closed] => 
+)
+
+[12-Feb-2025 19:46:15 Europe/Paris] Executing update on table: item_orders
+[12-Feb-2025 19:46:15 Europe/Paris] Binding parameters: Array
+(
+    [type] => PC Parts
+    [model_name] => PC Case
+    [quantity] => 1
+    [req_po_number] => 13319
+    [order_date] => 2024-12-05
+    [order_status] => Ordered
+    [id] => 18
+)
+
+[12-Feb-2025 19:46:15 Europe/Paris] No rows affected by update. SQL Error: 
+[12-Feb-2025 19:46:15 Europe/Paris] Error in update_table.php: No changes made or record not found
+[12-Feb-2025 19:46:15 Europe/Paris] Stack trace: #0 {main}
+[12-Feb-2025 19:46:23 Europe/Paris] Received raw input: {"id":"18","type":"PC Parts","model_name":"PC Case","quantity":"1","description":"","req_po_number":"13319","order_date":"2024-12-05","order_status":"Ordered","tags":"LE6 Automation","notes":"","from_closed":false}
+[12-Feb-2025 19:46:23 Europe/Paris] Decoded data: Array
+(
+    [id] => 18
+    [type] => PC Parts
+    [model_name] => PC Case
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 13319
+    [order_date] => 2024-12-05
+    [order_status] => Ordered
+    [tags] => LE6 Automation
+    [notes] => 
+    [from_closed] => 
+)
+
+[12-Feb-2025 19:46:23 Europe/Paris] Executing update on table: item_orders
+[12-Feb-2025 19:46:23 Europe/Paris] Binding parameters: Array
+(
+    [type] => PC Parts
+    [model_name] => PC Case
+    [quantity] => 1
+    [req_po_number] => 13319
+    [order_date] => 2024-12-05
+    [order_status] => Ordered
+    [id] => 18
+)
+
+[12-Feb-2025 19:46:23 Europe/Paris] No rows affected by update. SQL Error: 
+[12-Feb-2025 19:46:23 Europe/Paris] Error in update_table.php: No changes made or record not found
+[12-Feb-2025 19:46:23 Europe/Paris] Stack trace: #0 {main}
+[12-Feb-2025 19:46:36 Europe/Paris] Received raw input: {"id":"18","type":"PC Parts","model_name":"PC Case","quantity":"1","description":"","req_po_number":"13319","order_date":"2024-12-05","order_status":"Ordered","tags":"","notes":"","from_closed":false}
+[12-Feb-2025 19:46:36 Europe/Paris] Decoded data: Array
+(
+    [id] => 18
+    [type] => PC Parts
+    [model_name] => PC Case
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 13319
+    [order_date] => 2024-12-05
+    [order_status] => Ordered
+    [tags] => 
+    [notes] => 
+    [from_closed] => 
+)
+
+[12-Feb-2025 19:46:36 Europe/Paris] Executing update on table: item_orders
+[12-Feb-2025 19:46:36 Europe/Paris] Binding parameters: Array
+(
+    [type] => PC Parts
+    [model_name] => PC Case
+    [quantity] => 1
+    [req_po_number] => 13319
+    [order_date] => 2024-12-05
+    [order_status] => Ordered
+    [id] => 18
+)
+
+[12-Feb-2025 19:47:07 Europe/Paris] Received raw input: {"id":"25","type":"Motherboard","model_name":"ASUS INTEL LGA 4677MOTHERBOARD","quantity":"1","description":"","req_po_number":"13312","order_date":"2024-12-18","order_status":"Received","tags":"LE6 Automation","notes":"","from_closed":false}
+[12-Feb-2025 19:47:07 Europe/Paris] Decoded data: Array
+(
+    [id] => 25
+    [type] => Motherboard
+    [model_name] => ASUS INTEL LGA 4677MOTHERBOARD
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 13312
+    [order_date] => 2024-12-18
+    [order_status] => Received
+    [tags] => LE6 Automation
+    [notes] => 
+    [from_closed] => 
+)
+
+[12-Feb-2025 19:47:07 Europe/Paris] Executing update on table: item_orders
+[12-Feb-2025 19:47:07 Europe/Paris] Binding parameters: Array
+(
+    [type] => Motherboard
+    [model_name] => ASUS INTEL LGA 4677MOTHERBOARD
+    [quantity] => 1
+    [req_po_number] => 13312
+    [order_date] => 2024-12-18
+    [order_status] => Received
+    [id] => 25
+)
+
+[12-Feb-2025 19:47:20 Europe/Paris] Received raw input: {"id":"28","type":"Drive","model_name":"KINGSTON 2.5","quantity":"1","description":"","req_po_number":"13317","order_date":"2024-12-18","order_status":"Received","tags":"2nd UnReal PC - SQA","notes":"","from_closed":false}
+[12-Feb-2025 19:47:20 Europe/Paris] Decoded data: Array
+(
+    [id] => 28
+    [type] => Drive
+    [model_name] => KINGSTON 2.5
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 13317
+    [order_date] => 2024-12-18
+    [order_status] => Received
+    [tags] => 2nd UnReal PC - SQA
+    [notes] => 
+    [from_closed] => 
+)
+
+[12-Feb-2025 19:47:20 Europe/Paris] Executing update on table: item_orders
+[12-Feb-2025 19:47:20 Europe/Paris] Binding parameters: Array
+(
+    [type] => Drive
+    [model_name] => KINGSTON 2.5
+    [quantity] => 1
+    [req_po_number] => 13317
+    [order_date] => 2024-12-18
+    [order_status] => Received
+    [id] => 28
+)
+
+[12-Feb-2025 19:47:30 Europe/Paris] Received raw input: {"id":"20","type":"GPU","model_name":"Nvidia Quadro RTX A5000 Video Card","quantity":"1","description":"","req_po_number":"13321","order_date":"2024-12-05","order_status":"Received","tags":"2nd UnReal PC - SQA","notes":"","from_closed":false}
+[12-Feb-2025 19:47:30 Europe/Paris] Decoded data: Array
+(
+    [id] => 20
+    [type] => GPU
+    [model_name] => Nvidia Quadro RTX A5000 Video Card
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 13321
+    [order_date] => 2024-12-05
+    [order_status] => Received
+    [tags] => 2nd UnReal PC - SQA
+    [notes] => 
+    [from_closed] => 
+)
+
+[12-Feb-2025 19:47:30 Europe/Paris] Executing update on table: item_orders
+[12-Feb-2025 19:47:30 Europe/Paris] Binding parameters: Array
+(
+    [type] => GPU
+    [model_name] => Nvidia Quadro RTX A5000 Video Card
+    [quantity] => 1
+    [req_po_number] => 13321
+    [order_date] => 2024-12-05
+    [order_status] => Received
+    [id] => 20
+)
+
+[12-Feb-2025 19:47:50 Europe/Paris] Received raw input: {"id":"25","type":"Motherboard","model_name":"ASUS INTEL LGA 4677MOTHERBOARD","quantity":"1","description":"","req_po_number":"13312","order_date":"2024-12-18","order_status":"Received","tags":"LE6 Automation","notes":"","from_closed":false}
+[12-Feb-2025 19:47:50 Europe/Paris] Decoded data: Array
+(
+    [id] => 25
+    [type] => Motherboard
+    [model_name] => ASUS INTEL LGA 4677MOTHERBOARD
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 13312
+    [order_date] => 2024-12-18
+    [order_status] => Received
+    [tags] => LE6 Automation
+    [notes] => 
+    [from_closed] => 
+)
+
+[12-Feb-2025 19:47:50 Europe/Paris] Executing update on table: item_orders
+[12-Feb-2025 19:47:50 Europe/Paris] Binding parameters: Array
+(
+    [type] => Motherboard
+    [model_name] => ASUS INTEL LGA 4677MOTHERBOARD
+    [quantity] => 1
+    [req_po_number] => 13312
+    [order_date] => 2024-12-18
+    [order_status] => Received
+    [id] => 25
+)
+
+[12-Feb-2025 19:47:50 Europe/Paris] No rows affected by update. SQL Error: 
+[12-Feb-2025 19:47:50 Europe/Paris] Error in update_table.php: No changes made or record not found
+[12-Feb-2025 19:47:50 Europe/Paris] Stack trace: #0 {main}
+[12-Feb-2025 19:48:04 Europe/Paris] Received raw input: {"id":"26","type":"GPU","model_name":"AMD RADEON PRO WX 3200 4GB","quantity":"1","description":"","req_po_number":"13313","order_date":"2024-12-18","order_status":"Received","tags":"LE6 Automation","notes":"","from_closed":false}
+[12-Feb-2025 19:48:04 Europe/Paris] Decoded data: Array
+(
+    [id] => 26
+    [type] => GPU
+    [model_name] => AMD RADEON PRO WX 3200 4GB
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 13313
+    [order_date] => 2024-12-18
+    [order_status] => Received
+    [tags] => LE6 Automation
+    [notes] => 
+    [from_closed] => 
+)
+
+[12-Feb-2025 19:48:04 Europe/Paris] Executing update on table: item_orders
+[12-Feb-2025 19:48:04 Europe/Paris] Binding parameters: Array
+(
+    [type] => GPU
+    [model_name] => AMD RADEON PRO WX 3200 4GB
+    [quantity] => 1
+    [req_po_number] => 13313
+    [order_date] => 2024-12-18
+    [order_status] => Received
+    [id] => 26
+)
+
+[12-Feb-2025 19:48:15 Europe/Paris] Received raw input: {"id":"25","type":"Motherboard","model_name":"ASUS INTEL LGA 4677MOTHERBOARD","quantity":"1","description":"","req_po_number":"13312","order_date":"2024-12-18","order_status":"Received","tags":"","notes":"","from_closed":false}
+[12-Feb-2025 19:48:15 Europe/Paris] Decoded data: Array
+(
+    [id] => 25
+    [type] => Motherboard
+    [model_name] => ASUS INTEL LGA 4677MOTHERBOARD
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 13312
+    [order_date] => 2024-12-18
+    [order_status] => Received
+    [tags] => 
+    [notes] => 
+    [from_closed] => 
+)
+
+[12-Feb-2025 19:48:15 Europe/Paris] Executing update on table: item_orders
+[12-Feb-2025 19:48:15 Europe/Paris] Binding parameters: Array
+(
+    [type] => Motherboard
+    [model_name] => ASUS INTEL LGA 4677MOTHERBOARD
+    [quantity] => 1
+    [req_po_number] => 13312
+    [order_date] => 2024-12-18
+    [order_status] => Received
+    [id] => 25
+)
+
+[12-Feb-2025 19:48:29 Europe/Paris] Received raw input: {"id":"25","type":"Motherboard","model_name":"ASUS INTEL LGA 4677MOTHERBOARD","quantity":"1","description":"","req_po_number":"13312","order_date":"2024-12-18","order_status":"Received","tags":"LE6 Automation","notes":"","from_closed":false}
+[12-Feb-2025 19:48:29 Europe/Paris] Decoded data: Array
+(
+    [id] => 25
+    [type] => Motherboard
+    [model_name] => ASUS INTEL LGA 4677MOTHERBOARD
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 13312
+    [order_date] => 2024-12-18
+    [order_status] => Received
+    [tags] => LE6 Automation
+    [notes] => 
+    [from_closed] => 
+)
+
+[12-Feb-2025 19:48:29 Europe/Paris] Executing update on table: item_orders
+[12-Feb-2025 19:48:29 Europe/Paris] Binding parameters: Array
+(
+    [type] => Motherboard
+    [model_name] => ASUS INTEL LGA 4677MOTHERBOARD
+    [quantity] => 1
+    [req_po_number] => 13312
+    [order_date] => 2024-12-18
+    [order_status] => Received
+    [id] => 25
+)
+
+[12-Feb-2025 19:48:40 Europe/Paris] Received raw input: {"id":"24","type":"Motherboard","model_name":"ASUS INTEL LGA 4677MOTHERBOARD","quantity":"1","description":"","req_po_number":"13312","order_date":"2024-12-18","order_status":"Received","tags":"2nd UnReal PC - SQA","notes":"","from_closed":false}
+[12-Feb-2025 19:48:40 Europe/Paris] Decoded data: Array
+(
+    [id] => 24
+    [type] => Motherboard
+    [model_name] => ASUS INTEL LGA 4677MOTHERBOARD
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 13312
+    [order_date] => 2024-12-18
+    [order_status] => Received
+    [tags] => 2nd UnReal PC - SQA
+    [notes] => 
+    [from_closed] => 
+)
+
+[12-Feb-2025 19:48:40 Europe/Paris] Executing update on table: item_orders
+[12-Feb-2025 19:48:40 Europe/Paris] Binding parameters: Array
+(
+    [type] => Motherboard
+    [model_name] => ASUS INTEL LGA 4677MOTHERBOARD
+    [quantity] => 1
+    [req_po_number] => 13312
+    [order_date] => 2024-12-18
+    [order_status] => Received
+    [id] => 24
+)
+
+[12-Feb-2025 19:49:49 Europe/Paris] Received raw input: {"id":"18","type":"PC Parts","model_name":"PC Case","quantity":"1","description":"","req_po_number":"13319","order_date":"2024-12-05","order_status":"Ordered","tags":"LE6 Automation","notes":"","from_closed":false}
+[12-Feb-2025 19:49:49 Europe/Paris] Decoded data: Array
+(
+    [id] => 18
+    [type] => PC Parts
+    [model_name] => PC Case
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 13319
+    [order_date] => 2024-12-05
+    [order_status] => Ordered
+    [tags] => LE6 Automation
+    [notes] => 
+    [from_closed] => 
+)
+
+[12-Feb-2025 19:49:49 Europe/Paris] Executing update on table: item_orders
+[12-Feb-2025 19:49:49 Europe/Paris] Binding parameters: Array
+(
+    [type] => PC Parts
+    [model_name] => PC Case
+    [quantity] => 1
+    [req_po_number] => 13319
+    [order_date] => 2024-12-05
+    [order_status] => Ordered
+    [id] => 18
+)
+
+[12-Feb-2025 19:50:15 Europe/Paris] Received raw input: {"id":"33","type":"CPU","model_name":"Intel Xeon","quantity":"1","description":"","req_po_number":"13314","order_date":"2024-12-05","order_status":"Received","tags":"LE6 Automation","notes":"","from_closed":false}
+[12-Feb-2025 19:50:15 Europe/Paris] Decoded data: Array
+(
+    [id] => 33
+    [type] => CPU
+    [model_name] => Intel Xeon
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 13314
+    [order_date] => 2024-12-05
+    [order_status] => Received
+    [tags] => LE6 Automation
+    [notes] => 
+    [from_closed] => 
+)
+
+[12-Feb-2025 19:50:15 Europe/Paris] Executing update on table: item_orders
+[12-Feb-2025 19:50:15 Europe/Paris] Binding parameters: Array
+(
+    [type] => CPU
+    [model_name] => Intel Xeon
+    [quantity] => 1
+    [req_po_number] => 13314
+    [order_date] => 2024-12-05
+    [order_status] => Received
+    [id] => 33
+)
+
+[12-Feb-2025 19:56:51 Europe/Paris] Received raw input: {"id":"31","type":"Power Supply","model_name":"Antec Power Supply","quantity":"1","description":"","req_po_number":"13320","order_date":"2024-12-05","order_status":"Ordered","tags":"LE6 Automation","notes":"","from_closed":false}
+[12-Feb-2025 19:56:51 Europe/Paris] Decoded data: Array
+(
+    [id] => 31
+    [type] => Power Supply
+    [model_name] => Antec Power Supply
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 13320
+    [order_date] => 2024-12-05
+    [order_status] => Ordered
+    [tags] => LE6 Automation
+    [notes] => 
+    [from_closed] => 
+)
+
+[12-Feb-2025 19:56:51 Europe/Paris] Executing update on table: item_orders
+[12-Feb-2025 19:56:51 Europe/Paris] Binding parameters: Array
+(
+    [type] => Power Supply
+    [model_name] => Antec Power Supply
+    [quantity] => 1
+    [req_po_number] => 13320
+    [order_date] => 2024-12-05
+    [order_status] => Ordered
+    [id] => 31
+)
+
+[12-Feb-2025 20:08:30 Europe/Paris] Received raw input: {"id":"29","type":"Drive","model_name":"KINGSTON 240GB INTERNAL SSD","quantity":"1","description":"","req_po_number":"13318","order_date":"2024-12-18","order_status":"Received","tags":"LE6 Automation","notes":"","from_closed":false}
+[12-Feb-2025 20:08:30 Europe/Paris] Decoded data: Array
+(
+    [id] => 29
+    [type] => Drive
+    [model_name] => KINGSTON 240GB INTERNAL SSD
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 13318
+    [order_date] => 2024-12-18
+    [order_status] => Received
+    [tags] => LE6 Automation
+    [notes] => 
+    [from_closed] => 
+)
+
+[12-Feb-2025 20:08:30 Europe/Paris] Executing update on table: item_orders
+[12-Feb-2025 20:08:30 Europe/Paris] Binding parameters: Array
+(
+    [type] => Drive
+    [model_name] => KINGSTON 240GB INTERNAL SSD
+    [quantity] => 1
+    [req_po_number] => 13318
+    [order_date] => 2024-12-18
+    [order_status] => Received
+    [id] => 29
+)
+
+[12-Feb-2025 20:08:47 Europe/Paris] Received raw input: {"id":"27","type":"Drive","model_name":"KINGSTON 2.5\" INTERNAL SSD 480 GB","quantity":"1","description":"","req_po_number":"13317","order_date":"2024-12-18","order_status":"Received","tags":"LE6 Automation","notes":"","from_closed":false}
+[12-Feb-2025 20:08:47 Europe/Paris] Decoded data: Array
+(
+    [id] => 27
+    [type] => Drive
+    [model_name] => KINGSTON 2.5" INTERNAL SSD 480 GB
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 13317
+    [order_date] => 2024-12-18
+    [order_status] => Received
+    [tags] => LE6 Automation
+    [notes] => 
+    [from_closed] => 
+)
+
+[12-Feb-2025 20:08:47 Europe/Paris] Executing update on table: item_orders
+[12-Feb-2025 20:08:47 Europe/Paris] Binding parameters: Array
+(
+    [type] => Drive
+    [model_name] => KINGSTON 2.5" INTERNAL SSD 480 GB
+    [quantity] => 1
+    [req_po_number] => 13317
+    [order_date] => 2024-12-18
+    [order_status] => Received
+    [id] => 27
+)
+
+[12-Feb-2025 21:08:42 Europe/Paris] Received raw input: {"id":"14","type":"PC Parts","model_name":"CPU Heatsink","quantity":"1","description":"","req_po_number":"13315","order_date":"2024-12-05","order_status":"Ordered","tags":"LE6 Automation","notes":"","from_closed":false}
+[12-Feb-2025 21:08:42 Europe/Paris] Decoded data: Array
+(
+    [id] => 14
+    [type] => PC Parts
+    [model_name] => CPU Heatsink
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 13315
+    [order_date] => 2024-12-05
+    [order_status] => Ordered
+    [tags] => LE6 Automation
+    [notes] => 
+    [from_closed] => 
+)
+
+[12-Feb-2025 21:08:42 Europe/Paris] Executing update on table: item_orders
+[12-Feb-2025 21:08:42 Europe/Paris] Binding parameters: Array
+(
+    [type] => PC Parts
+    [model_name] => CPU Heatsink
+    [quantity] => 1
+    [req_po_number] => 13315
+    [order_date] => 2024-12-05
+    [order_status] => Ordered
+    [id] => 14
+)
+
+[12-Feb-2025 21:16:08 Europe/Paris] Received raw input: {"id":"15","type":"Memory","model_name":"Kingston Memory 64 GB Kit","quantity":"2","description":"","req_po_number":"13316","order_date":"2024-12-05","order_status":"Ordered","tags":"AMD SERVER","notes":"","from_closed":false}
+[12-Feb-2025 21:16:08 Europe/Paris] Decoded data: Array
+(
+    [id] => 15
+    [type] => Memory
+    [model_name] => Kingston Memory 64 GB Kit
+    [quantity] => 2
+    [description] => 
+    [req_po_number] => 13316
+    [order_date] => 2024-12-05
+    [order_status] => Ordered
+    [tags] => AMD SERVER
+    [notes] => 
+    [from_closed] => 
+)
+
+[12-Feb-2025 21:16:08 Europe/Paris] Executing update on table: item_orders
+[12-Feb-2025 21:16:08 Europe/Paris] Binding parameters: Array
+(
+    [type] => Memory
+    [model_name] => Kingston Memory 64 GB Kit
+    [quantity] => 2
+    [req_po_number] => 13316
+    [order_date] => 2024-12-05
+    [order_status] => Ordered
+    [id] => 15
+)
+
+[12-Feb-2025 21:16:40 Europe/Paris] Received raw input: {"id":"28","type":"Drive","model_name":"KINGSTON 2.5\" INTERNAL SSD 480 GB","quantity":"1","description":"","req_po_number":"13317","order_date":"2024-12-18","order_status":"Received","tags":"2nd UnReal PC - SQA","notes":"","from_closed":false}
+[12-Feb-2025 21:16:40 Europe/Paris] Decoded data: Array
+(
+    [id] => 28
+    [type] => Drive
+    [model_name] => KINGSTON 2.5" INTERNAL SSD 480 GB
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 13317
+    [order_date] => 2024-12-18
+    [order_status] => Received
+    [tags] => 2nd UnReal PC - SQA
+    [notes] => 
+    [from_closed] => 
+)
+
+[12-Feb-2025 21:16:40 Europe/Paris] Executing update on table: item_orders
+[12-Feb-2025 21:16:40 Europe/Paris] Binding parameters: Array
+(
+    [type] => Drive
+    [model_name] => KINGSTON 2.5" INTERNAL SSD 480 GB
+    [quantity] => 1
+    [req_po_number] => 13317
+    [order_date] => 2024-12-18
+    [order_status] => Received
+    [id] => 28
+)
+
+[12-Feb-2025 21:22:37 Europe/Paris] Received raw input: {"id":"40","type":"Other","model_name":"Elgato Stream Studio Controller","quantity":"1","description":"","req_po_number":"13325","order_date":"2025-01-30","order_status":"Closed","tags":"Origin","notes":"","from_closed":false}
+[12-Feb-2025 21:22:37 Europe/Paris] Decoded data: Array
+(
+    [id] => 40
+    [type] => Other
+    [model_name] => Elgato Stream Studio Controller
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 13325
+    [order_date] => 2025-01-30
+    [order_status] => Closed
+    [tags] => Origin
+    [notes] => 
+    [from_closed] => 
+)
+
+[12-Feb-2025 21:22:37 Europe/Paris] Executing update on table: item_orders
+[12-Feb-2025 21:22:37 Europe/Paris] Binding parameters: Array
+(
+    [type] => Other
+    [model_name] => Elgato Stream Studio Controller
+    [quantity] => 1
+    [req_po_number] => 13325
+    [order_date] => 2025-01-30
+    [order_status] => Closed
+    [id] => 40
+)
+
+[18-Feb-2025 16:00:12 Europe/Paris] Received raw input: {"id":"43","type":"PC Parts","model_name":"CPU Heat Sink","quantity":"1","description":"","req_po_number":"13315","order_date":"2025-02-14","order_status":"Ordered","tags":"LE6 Automation","notes":"","from_closed":false}
+[18-Feb-2025 16:00:12 Europe/Paris] Decoded data: Array
+(
+    [id] => 43
+    [type] => PC Parts
+    [model_name] => CPU Heat Sink
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 13315
+    [order_date] => 2025-02-14
+    [order_status] => Ordered
+    [tags] => LE6 Automation
+    [notes] => 
+    [from_closed] => 
+)
+
+[18-Feb-2025 16:00:12 Europe/Paris] Executing update on table: item_orders
+[18-Feb-2025 16:00:12 Europe/Paris] Binding parameters: Array
+(
+    [type] => PC Parts
+    [model_name] => CPU Heat Sink
+    [quantity] => 1
+    [req_po_number] => 13315
+    [order_date] => 2025-02-14
+    [order_status] => Ordered
+    [id] => 43
+)
+
+[18-Feb-2025 16:00:26 Europe/Paris] Received raw input: {"id":"42","type":"PC Parts","model_name":"CPU Heat Sink","quantity":"1","description":"","req_po_number":"13315","order_date":"2025-02-14","order_status":"Ordered","tags":"2nd UnReal PC - SQA","notes":"","from_closed":false}
+[18-Feb-2025 16:00:26 Europe/Paris] Decoded data: Array
+(
+    [id] => 42
+    [type] => PC Parts
+    [model_name] => CPU Heat Sink
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 13315
+    [order_date] => 2025-02-14
+    [order_status] => Ordered
+    [tags] => 2nd UnReal PC - SQA
+    [notes] => 
+    [from_closed] => 
+)
+
+[18-Feb-2025 16:00:26 Europe/Paris] Executing update on table: item_orders
+[18-Feb-2025 16:00:26 Europe/Paris] Binding parameters: Array
+(
+    [type] => PC Parts
+    [model_name] => CPU Heat Sink
+    [quantity] => 1
+    [req_po_number] => 13315
+    [order_date] => 2025-02-14
+    [order_status] => Ordered
+    [id] => 42
+)
+
+[18-Feb-2025 16:05:07 Europe/Paris] Received raw input: {"id":"15","type":"Memory","model_name":"Kingston Memory 64 GB Kit","quantity":"1","description":"","req_po_number":"13316","order_date":"2024-12-05","order_status":"Ordered","tags":"LE6 Automation","notes":"","from_closed":false}
+[18-Feb-2025 16:05:07 Europe/Paris] Decoded data: Array
+(
+    [id] => 15
+    [type] => Memory
+    [model_name] => Kingston Memory 64 GB Kit
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 13316
+    [order_date] => 2024-12-05
+    [order_status] => Ordered
+    [tags] => LE6 Automation
+    [notes] => 
+    [from_closed] => 
+)
+
+[18-Feb-2025 16:05:07 Europe/Paris] Executing update on table: item_orders
+[18-Feb-2025 16:05:07 Europe/Paris] Binding parameters: Array
+(
+    [type] => Memory
+    [model_name] => Kingston Memory 64 GB Kit
+    [quantity] => 1
+    [req_po_number] => 13316
+    [order_date] => 2024-12-05
+    [order_status] => Ordered
+    [id] => 15
+)
+
+[18-Feb-2025 16:06:50 Europe/Paris] Received raw input: {"id":"44","type":"Memory","model_name":"Kingston Memory 64 GB Kit","quantity":"1","description":"","req_po_number":"13316","order_date":"2025-04-04","order_status":"Ordered","tags":"2nd UnReal PC - SQA","notes":"","from_closed":false}
+[18-Feb-2025 16:06:50 Europe/Paris] Decoded data: Array
+(
+    [id] => 44
+    [type] => Memory
+    [model_name] => Kingston Memory 64 GB Kit
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 13316
+    [order_date] => 2025-04-04
+    [order_status] => Ordered
+    [tags] => 2nd UnReal PC - SQA
+    [notes] => 
+    [from_closed] => 
+)
+
+[18-Feb-2025 16:06:50 Europe/Paris] Executing update on table: item_orders
+[18-Feb-2025 16:06:50 Europe/Paris] Binding parameters: Array
+(
+    [type] => Memory
+    [model_name] => Kingston Memory 64 GB Kit
+    [quantity] => 1
+    [req_po_number] => 13316
+    [order_date] => 2025-04-04
+    [order_status] => Ordered
+    [id] => 44
+)
+
+[19-Feb-2025 17:10:16 Europe/Paris] Received raw input: {"id":"39","type":"PC Parts","model_name":"Kingston SSD","quantity":"1","description":"","req_po_number":"12345","order_date":"2025-02-06","order_status":"Received","tags":"DUMMY","notes":"","from_closed":false}
+[19-Feb-2025 17:10:16 Europe/Paris] Decoded data: Array
+(
+    [id] => 39
+    [type] => PC Parts
+    [model_name] => Kingston SSD
+    [quantity] => 1
+    [description] => 
+    [req_po_number] => 12345
+    [order_date] => 2025-02-06
+    [order_status] => Received
+    [tags] => DUMMY
+    [notes] => 
+    [from_closed] => 
+)
+
+[19-Feb-2025 17:10:16 Europe/Paris] Executing update on table: item_orders
+[19-Feb-2025 17:10:16 Europe/Paris] Binding parameters: Array
+(
+    [type] => PC Parts
+    [model_name] => Kingston SSD
+    [quantity] => 1
+    [req_po_number] => 12345
+    [order_date] => 2025-02-06
+    [order_status] => Received
+    [id] => 39
+)
+
